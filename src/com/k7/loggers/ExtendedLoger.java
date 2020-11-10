@@ -10,7 +10,7 @@ import java.util.Date;
 
 public class ExtendedLoger implements Logger {
     String log = "";
-    Date date = new Date();
+    Date date;
     DateFormat dtf = new SimpleDateFormat("yyyy-MM-dd  hh:mm:ss");
 
     public void resetLog() {
@@ -19,24 +19,24 @@ public class ExtendedLoger implements Logger {
 
     @Override
     public void info(String msg, Contacts contact) {
-        System.out.println("[INFO] " + dtf.format(date) + ": " + msg);
+        System.out.println("[INFO] " + dtf.format(date = new Date()) + ": " + msg);
         System.out.println(contact.getName() + " " + contact.getSurname() + " " + contact.getNumber());
     }
 
     @Override
     public void info(String msg) {
-        log += "[INFO] " + dtf.format(date) + ": " + msg + "\n";
+        log += "[INFO] " + dtf.format(date = new Date()) + ": " + msg + "\n";
     }
 
     @Override
     public void error(String msg, Contacts contact) {
-        System.out.println("[ERROR] " + dtf.format(date) + ": " + msg);
+        System.out.println("[ERROR] " + dtf.format(date = new Date()) + ": " + msg);
 
     }
 
     @Override
     public void error(String msg) {
-        log += "[ERROR] " + dtf.format(date) + ": " + msg + "\n";
+        log += "[ERROR] " + dtf.format(date = new Date()) + ": " + msg + "\n";
     }
 
     @Override
