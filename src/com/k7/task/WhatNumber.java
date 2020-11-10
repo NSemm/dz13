@@ -17,8 +17,7 @@ public class WhatNumber {
     public int genRandom() {
         double num = Math.random();
         int numRandom = (int) Math.round(num * (100 - 1) + 1);
-        //System.out.println(numRandom);
-        logger.info("INFO:numRandom = " + numRandom);
+        logger.info("numRandom = " + numRandom);
         return numRandom;
     }
 
@@ -32,7 +31,7 @@ public class WhatNumber {
     public void startGame(int numRandom, int numEnter) {
         int countAttempt = 1;
         while (numEnter != numRandom && countAttempt < 6) {
-            logger.error("ERROR:Try " + countAttempt + ", numEnter = " + numEnter);
+            logger.error("Try " + countAttempt + ", numEnter = " + numEnter);
             if (numEnter > numRandom) System.out.println("Много насыпал! Бери меньше!");
             else System.out.println("Маловато будет! Пробуй ещё!");
             numEnter = scanner.nextInt();
@@ -41,13 +40,14 @@ public class WhatNumber {
         }
         if (numEnter == numRandom) {
             System.out.println("В точку! Справился за " + countAttempt + " попыток");
-            logger.info("INFO:Try " + countAttempt + ", numEnter = " + numEnter + ". Victory!");
+            logger.info("Try " + countAttempt + ", numEnter = " + numEnter + ". Victory!");
         } else {
             System.out.println("Всё! Game Over!");
-            logger.info("INFO:Game over");
+            logger.info("Game over");
         }
     }
-    public void viewLog(){
+
+    public void viewLog() {
         System.out.println("------------log-----------");
         System.out.println(logger.toString());
     }

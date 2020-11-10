@@ -15,7 +15,6 @@ public class ToDo {
     }
 
     public void startWhatNumber() {
-        //Scanner sc = new Scanner(System.in);
         WhatNumber game = new WhatNumber(sc, logger);
         game.startGame(game.genRandom(), game.firstEnterNumber());
         game.viewLog();
