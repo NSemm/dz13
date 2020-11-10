@@ -19,7 +19,7 @@ public class Main {
         if (loggerType == 1) logger = new StandartLogger();
         else logger = new ExtendedLoger();
         ToDo startProgram = new ToDo(sc, logger);
-        //startProgram.startWhatNumber();
+        startProgram.startWhatNumber();
 
         ContactStorage storage = new ContactStorage();
         PhoneBookControl bookControl = new PhoneBookControl(sc, storage, logger);
